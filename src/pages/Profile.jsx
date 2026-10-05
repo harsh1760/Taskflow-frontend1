@@ -1,0 +1,4 @@
+import { PageLayout } from "./Dashboard";
+import { useAuth } from "../context/AuthContext";
+
+export default function Profile() { const { user } = useAuth(); return <PageLayout><div className="page-heading"><div><div className="eyebrow">Account</div><h1>Your profile</h1><p>Your account details and workspace role.</p></div></div><section className="profile-card"><div className="profile-hero"><span className="profile-avatar">{user?.name?.[0]?.toUpperCase()}</span><div><h2>{user?.name}</h2><p>{user?.role === "admin" ? "Administrator" : "Member"}</p></div></div><div className="profile-fields"><div><span>Name</span><strong>{user?.name || "Not available"}</strong></div><div><span>Email</span><strong>{user?.email || "Not available"}</strong></div><div><span>Role</span><strong className="role-value">{user?.role || "user"}</strong></div></div></section></PageLayout>; }
