@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://taskflow-backend-4fll.onrender.com/api",
+  baseURL: import.meta.env.VITE_API_URL || "https://taskflow-backend-1-yixb.onrender.com",
   headers: { "Content-Type": "application/json" },
 });
 
